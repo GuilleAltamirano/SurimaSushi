@@ -3,7 +3,7 @@ import '../../styles/components/navbar.scss'
 function Navbar() {
     return (
         <nav>
-            <img src="/surima/assents/img/logo.png" alt="Logo" />
+            <img src="./img/logo.png" alt="Logo" />
             <ul>
                 <li>
                     <a href="#"> Inicio </a>
