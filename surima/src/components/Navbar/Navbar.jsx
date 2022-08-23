@@ -1,9 +1,13 @@
 import '../../styles/components/navbar.scss'
+import logo from './img/logo.png'
+import IconosNav from '../IconosNav/IconosNav';
+
 
 function Navbar() {
     return (
         <nav>
-            <img src="./img/logo.png" alt="Logo" />
+            <IconosNav></IconosNav>
+            <img src={logo} alt="Logo" />
             <ul>
                 <li>
                     <a href="#"> Inicio </a>
@@ -18,7 +22,7 @@ function Navbar() {
                     <a href="#"> Pedir </a>
                 </li>
                 <li>
-                    <a href="#"> Donde encontrarnos </a>
+                    <a href="#"> Donde estamos </a>
                 </li>
             </ul>
         </nav>
