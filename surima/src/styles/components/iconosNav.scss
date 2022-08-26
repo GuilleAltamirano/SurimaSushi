@@ -1,11 +1,14 @@
-div {
-    display: inline;
-    a {
-        img {
-            padding: 1% 0 0 1%;
-            width: 2%;
-            height: 2%;
-        }
+
+.contenedorRRSS {
+    display: flex;
+    justify-content: end;
+    padding-right: 5%;
+    .iconoRRSS {
+        padding-right: 10px;
+        padding-top: 5px;
+        width: 30px;
+        height: 30px;
     }
 }
+
 

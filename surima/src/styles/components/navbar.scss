@@ -1,6 +1,7 @@
 nav {
     background-color: transparent;
     position: fixed;
+    top: 0;
     display: block;
     width: 100%;
     img {
@@ -20,7 +21,7 @@ nav {
             padding: 10px;
             a{
                 text-decoration: none;
-                color: black;
+                color: #fff;
                 padding: 10px;
 
                 &:hover{
