@@ -6,4 +6,9 @@
 * {
     padding: 0;
     margin: 0;
+    .sectionProductos {
+        display: grid;
+        grid-template-columns: 33% 33% 33%;
+        padding: 20px;
+    }
 }
