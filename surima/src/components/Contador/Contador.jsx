@@ -6,13 +6,18 @@ const functionExterna = () => {
 
 export const Contador = () => {
     let [acu, setAcu] = useState(1);
+    let stock = 5;
     
     useEffect( () => {
         console.log("1")
     }, [] );
 
     const sumar = () => {
-        setAcu(acu += 1);
+        if (acu >= stock) {
+            alert("Error, no contamos con ese stock")
+        }else {
+            setAcu(acu += 1);
+        }
     };
 
     const restar = () => {
