@@ -1,16 +1,7 @@
-import { useEffect, useState } from "react";
+import { useState } from "react";
 
-const functionExterna = () => {
-    console.log("1")
-};
-
-export const Contador = () => {
+export const Contador = (stock, agregarProducto) => {
     let [acu, setAcu] = useState(1);
-    let stock = 5;
-    
-    useEffect( () => {
-        console.log("1")
-    }, [] );
 
     const sumar = () => {
         if (acu >= stock) {
@@ -21,7 +12,7 @@ export const Contador = () => {
     };
 
     const restar = () => {
-        if (acu == 1) {
+        if (acu === 1) {
             alert("Error, debe ser mayor a 1")
         } else {
             setAcu(acu -= 1);
@@ -33,7 +24,7 @@ export const Contador = () => {
             <p>Numero actual = {acu}</p>
             <button onClick={sumar}>suma +</button>
             <button onClick={restar}>resta -</button>
-            {functionExterna()}
+            <button onClick={ () => (agregarProducto(acu)) }>Agregar</button>
         </>
         
     )
