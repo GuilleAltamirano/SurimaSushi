@@ -1,28 +1,31 @@
 import '../../styles/components/navbar.scss'
-import logo from './img/logo.png'
+import logo from "./img/logo.png";
 import IconosNav from '../IconosNav/IconosNav';
+import { Link } from "react-router-dom";
 
 
 function Navbar() {
     return (
         <nav>
             <IconosNav></IconosNav>
-            <img src={logo} alt="Logo" />
-            <ul>
-                <li>
-                    <a href="#"> Inicio </a>
+            <Link to='/'>
+                <img src={logo} alt="" />
+            </Link>
+            <ul className='ulNavbar'>
+                <li className='liNavbar'>
+                    <Link to="/"> Inicio </Link>
                 </li>
-                <li>
-                    <a href="#"> Conocenos </a>
+                <li className='liNavbar'>
+                    <Link to='/SobreNosotros'> Sobre Nosotros </Link>
                 </li>
-                <li>
-                    <a href="#"> Carta </a>
+                <li className='liNavbar'>
+                    <Link to='/Productos'>Productos</Link>
                 </li>
-                <li>
-                    <a href="#"> Pedir </a>
+                <li className='liNavbar'>
+                    <Link to='/Pedir'>Pedir</Link>
                 </li>
-                <li>
-                    <a href="#"> Donde estamos </a>
+                <li className='liNavbar'>
+                    <Link to='/DondeEstamos'>Donde Estamos</Link>
                 </li>
             </ul>
         </nav>
