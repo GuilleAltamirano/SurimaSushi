@@ -24,10 +24,14 @@ const productos = [
 ];
 
 //Promesa
+
+
 export const getFetch = new Promise((resolve, reject) => {
+    
     setTimeout(() => {
         resolve(productos);
         reject(err => console.log(err));
+        
     })
 }, 3000);
 

@@ -9,15 +9,19 @@ import { BrowserRouter, Routes, Route, Router } from "react-router-dom";
 
 
 function App() {
+  const cambiarNavbar = ()=> {
+    console.log("cambio")
+  }
 
   return (
     <>
       <BrowserRouter>
-        <div>
+        <div onScroll={cambiarNavbar}>
           <Navbar />
           <Routes>
-            <Route path='/Productos' element={<ItemListContainer />} />
-            <Route path='/Productos/:Producto' element={<ItemDetailContainer/>} />
+            <Route path='/' element={<ItemListContainer/>} />
+            <Route path='/Productos/' element={<ItemListContainer />} />
+            <Route path='/Productos/:tipoProducto' element={<ItemDetailContainer/>} />
           </Routes>
           <IconosFlotantes />
         </div>
