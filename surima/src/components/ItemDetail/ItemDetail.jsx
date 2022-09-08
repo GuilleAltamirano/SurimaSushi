@@ -1,18 +1,21 @@
 import { useState, useEffect } from "react";
 import { getFetch } from "../../helper/productos";
+import { useParams } from "react-router-dom";
 
 export const ItemDetail = () => {
     const [data, setData] = useState({});
     const [loading, setLoading] = useState(true);
+    const {tipoProducto} = useParams();
+    console.log("tipo", tipoProducto)
 
     useEffect (() => {
         getFetch
         .then(response => {
-            setData(response.find(prod => prod.id === 1))
+            setData(response.find(data => data.id === parseInt(tipoProducto)))
             setLoading(false)
             
         })
-    })
+    }, [tipoProducto])
     
     return ( 
         <div>
@@ -24,8 +27,8 @@ export const ItemDetail = () => {
 
             <div>
                 <img src={data.img} alt="" />
-                <h2>{data.name}</h2>
-                <p>{data.description}</p>
+                <p>{data.name}</p>
+                <h2>{data.id}</h2>
             </div>
         }
         </div>
