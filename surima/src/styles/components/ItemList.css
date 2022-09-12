@@ -1,0 +1,5 @@
+.containerItemList {
+    display: grid;
+    background-color: black;
+    grid-template-columns: 33% 33% 33%;
+}

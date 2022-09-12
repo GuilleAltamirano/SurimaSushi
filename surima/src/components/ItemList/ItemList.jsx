@@ -1,3 +1,4 @@
+import "../../styles/components/ItemList.css";
 import { useEffect, useState } from "react";
 import { getFetch } from "../../helper/productos";
 import { Item } from "../Item/Item";
@@ -31,7 +32,7 @@ export const ItemList = () => {
 
             :
 
-            <div>
+            <div className="containerItemList">
                 {data.map(data => (
                     <Item key={data.name} data={data}/>
                 ))}

@@ -18,14 +18,14 @@ function App() {
     <>
       <BrowserRouter>
         <div onScroll={cambiarNavbar}>
-          <Navbar />
+
           <Routes>
             <Route path='/' element={<ItemListContainer/>} />
             <Route path='/Productos/' element={<ItemListContainer />} />
             <Route path='/Productos/:tipoProducto' element={<ItemDetailContainer/>} />
             <Route path='/CartContainer' element={<CartContainer/>} />
           </Routes>
-          <IconosFlotantes />
+          <IconosFlotantes/>
         </div>
       </BrowserRouter>
     </>

@@ -1,12 +1,17 @@
 import { useState, useEffect } from "react";
 import { getFetch } from "../../helper/productos";
 import { useParams } from "react-router-dom";
+import '../../styles/components/ItemDetail.css'
+import { ItemCount } from "../ItemCount/ItemCount";
 
 export const ItemDetail = () => {
     const [data, setData] = useState({});
     const [loading, setLoading] = useState(true);
     const {tipoProducto} = useParams();
-    console.log("tipo", tipoProducto)
+    
+    let onAdd = (contador) => {
+        console.log("contador", contador)
+    }
 
     useEffect (() => {
         getFetch
@@ -25,10 +30,12 @@ export const ItemDetail = () => {
 
             :
 
-            <div>
-                <img src={data.img} alt="" />
+            <div className="containerItemDetail">
+                <img src={data.img} alt="" className="imgItemDetail"/>
                 <p>{data.name}</p>
-                <h2>{data.id}</h2>
+                <p>{data.description}</p>
+                <p>precio: ${data.precio}</p>
+                <ItemCount onAdd={onAdd}/>
             </div>
         }
         </div>

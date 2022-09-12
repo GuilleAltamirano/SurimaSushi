@@ -1,0 +1,8 @@
+.containerContador {
+    display: grid;
+    grid-template-columns: 33% 33% 33%;
+}
+
+.agregarCarritoBT {
+    padding: 100px;
+}

@@ -1,5 +1,6 @@
+
 export const CartContainer = () => {
     return (
-        <p>a</p>
+        <h2>card container</h2>
     )
 }
