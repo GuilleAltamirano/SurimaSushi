@@ -3,14 +3,19 @@ import { getFetch } from "../../helper/productos";
 import { useParams } from "react-router-dom";
 import '../../styles/components/ItemDetail.css'
 import { ItemCount } from "../ItemCount/ItemCount";
+import { useContext } from "react";
+import { CartContext } from "../../context/CartContext";
 
 export const ItemDetail = () => {
     const [data, setData] = useState({});
     const [loading, setLoading] = useState(true);
     const {tipoProducto} = useParams();
     
+    const {addProducts} = useContext(CartContext);
+    
     let onAdd = (contador) => {
-        console.log("contador", contador)
+        const newProduct = {...data, quantity:contador};
+        addProducts()
     }
 
     useEffect (() => {

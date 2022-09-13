@@ -7,6 +7,8 @@ import { ItemDetailContainer } from "./components/ItemDetailContainer/ItemDetail
 import { Footer } from "./components/Footer/Footer";
 import { BrowserRouter, Routes, Route, Router } from "react-router-dom";
 import { CartContainer } from './components/CartContainer/CartContainer';
+import { CartProvider } from "./context/CartContext";
+
 
 
 function App() {
@@ -16,18 +18,21 @@ function App() {
 
   return (
     <>
-      <BrowserRouter>
-        <div onScroll={cambiarNavbar}>
-
-          <Routes>
-            <Route path='/' element={<ItemListContainer/>} />
-            <Route path='/Productos/' element={<ItemListContainer />} />
-            <Route path='/Productos/:tipoProducto' element={<ItemDetailContainer/>} />
-            <Route path='/CartContainer' element={<CartContainer/>} />
-          </Routes>
-          <IconosFlotantes/>
-        </div>
-      </BrowserRouter>
+      <CartProvider>
+        <BrowserRouter>
+          <div onScroll={cambiarNavbar} value={[]}>
+              <Navbar />
+              <Routes>
+                <Route path='/' element={<ItemListContainer/>} />
+                <Route path='/Productos/' element={<ItemListContainer />} />
+                <Route path='/Productos/:tipoProducto' element={<ItemDetailContainer/>} />
+                <Route path='/CartContainer' element={<CartContainer/>} />
+              </Routes>
+              <IconosFlotantes/>
+          </div>
+        </BrowserRouter>
+      </CartProvider>
+      
     </>
   );
 };
