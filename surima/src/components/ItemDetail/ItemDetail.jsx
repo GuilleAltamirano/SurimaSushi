@@ -15,7 +15,7 @@ export const ItemDetail = () => {
     
     let onAdd = (contador) => {
         const newProduct = {...data, quantity:contador};
-        addProducts()
+        addProducts(newProduct);
     }
 
     useEffect (() => {
