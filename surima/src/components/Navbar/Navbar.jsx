@@ -4,21 +4,18 @@ import IconosNav from '../IconosNav/IconosNav';
 import { NavLink,Link } from "react-router-dom";
 
 
-function Navbar() {
+export function Navbar() {
     return (
         <>
-            <IconosNav/>
             <nav>
-                <NavLink className={({isActive})=>isActive ? "claseActive": "claseInactive"} to='/SobreNosotros'> Conocenos </NavLink>
-                <NavLink className={({isActive})=>isActive ? "claseActive": "claseInactive"} to='/Productos'>Productos</NavLink>
+                <NavLink className={({isActive})=>isActive ? "claseActive": "claseInactive"} to='/conocenos'> Conocenos </NavLink>
+                <NavLink className={({isActive})=>isActive ? "claseActive": "claseInactive"} to='/productos'>Productos</NavLink>
                 <Link to='/' className='logoLink'>
                     <img src={logo} alt="" className='logo'/>
                 </Link>
-                <NavLink className={({isActive})=>isActive ? "claseActive": "claseInactive"} to='/Pedir'>Pedir</NavLink>
-                <NavLink className={({isActive})=>isActive ? "claseActive": "claseInactive"} to='/DondeEstamos'>Donde Estamos</NavLink>
+                <NavLink className={({isActive})=>isActive ? "claseActive": "claseInactive"} to='/pedir'>Pedir</NavLink>
+                <NavLink className={({isActive})=>isActive ? "claseActive": "claseInactive"} to='/contacto'>Contacto</NavLink>
             </nav>
         </>
     )
 };
-
-export default Navbar;
