@@ -11,8 +11,21 @@ export const CartProvider = ({children}) => {
         setProductCartList(newList);
     }
 
+    const deleteProduct = (idProduct) => {
+        const copyArray = [...productCartList];
+        const newArray = copyArray.filter(elm=>elm.id !== idProduct);
+        setProductCartList(newArray);
+    }
+
+    const clearProductCartList = () => {
+        setProductCartList([]);
+    }
+    const isInCart = (id) => {
+        const elementExists = productCartList.some((element) => element.id === id);
+    }
+
     return (
-        <CartContext.Provider value={{productCartList, addProducts}}>
+        <CartContext.Provider value={{productCartList, addProducts, deleteProduct, clearProductCartList, isInCart}}>
             {children}
         </CartContext.Provider>
     )

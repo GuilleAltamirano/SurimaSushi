@@ -1,10 +1,11 @@
 import { React } from "react";
 import { useContext } from "react";
 import { CartContext } from "../../context/CartContext";
+import "../../styles/components/CartContainer.css";
 
 
 export const CartContainer = () => {
-    const {productCartList} = useContext(CartContext);
+    const {productCartList, deleteProduct, clearProductCartList, isInCart} = useContext(CartContext);
 
     return (
         <>
@@ -12,9 +13,20 @@ export const CartContainer = () => {
 
             {
                 productCartList.map(item => (
-                    <p>{item.name}</p>
+                    <div>
+                        <div className="containerProductCart">
+                            <img src={item.img} alt="" />
+                            <p>{item.name}</p>
+                            <p>{item.precio}</p>
+                            <p>{item.quantity}</p>
+                            <button onClick={()=>deleteProduct(item.id)}>Eliminar producto</button>
+                        </div>
+                    </div>
                 ))
             }
+
+            <button onClick={()=>isInCart()}>comprobar</button>
+            <button onClick={clearProductCartList}>Limpiar Carrito</button>
         </>
     )
 }

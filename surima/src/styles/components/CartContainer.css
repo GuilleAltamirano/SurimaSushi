@@ -1,0 +1,8 @@
+.containerProductCart {
+    background-color: blue;
+    display: flex;
+}
+.containerProductCart img{
+    width: 100px;
+    height: 100px;
+}
