@@ -11,11 +11,11 @@ export const ItemDetail = () => {
     const [loading, setLoading] = useState(true);
     const {tipoProducto} = useParams();
     
-    const {addProducts} = useContext(CartContext);
+    const {addProduct} = useContext(CartContext);
     
     let onAdd = (contador) => {
         const newProduct = {...data, quantity:contador};
-        addProducts(newProduct);
+        addProduct(newProduct);
     }
 
     useEffect (() => {

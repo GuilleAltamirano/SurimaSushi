@@ -13,14 +13,12 @@ export const CartContainer = () => {
 
             {
                 productCartList.map(item => (
-                    <div>
-                        <div className="containerProductCart">
-                            <img src={item.img} alt="" />
-                            <p>{item.name}</p>
-                            <p>{item.precio}</p>
-                            <p>{item.quantity}</p>
-                            <button onClick={()=>deleteProduct(item.id)}>Eliminar producto</button>
-                        </div>
+                    <div className="containerProductCart" key={item}>
+                        <img src={item.img} alt="" />
+                        <p>{item.name}</p>
+                        <p>{item.precio}</p>
+                        <p>{item.quantity}</p>
+                        <button onClick={()=>deleteProduct(item.id)}>Eliminar producto</button>
                     </div>
                 ))
             }
