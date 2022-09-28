@@ -39,7 +39,7 @@ export const ItemDetail = () => {
                 <img src={data.img} alt="" className="imgItemDetail"/>
                 <p>{data.name}</p>
                 <p>{data.description}</p>
-                <p>precio: ${data.precio}</p>
+                <p>${data.precio}</p>
                 <ItemCount onAdd={onAdd}/>
             </div>
         }

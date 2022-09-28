@@ -11,6 +11,7 @@ import { CartProvider } from "./context/CartContext";
 import { CarouselHome } from './components/CarouselHome/CarouselHome';
 import { SectionOfrecemos } from './components/SectionOfrecemos/SectionOfrecemos';
 import { HomeContainer } from './components/HomeContainer/HomeContainer';
+import { FirebaseCart } from "./components/FirebaseCart/FirebaseCart";
 
 
 
@@ -27,6 +28,7 @@ function App() {
           <Route path='/contacto' element={<Footer/>}/>
           <Route path='/productos/:tipoProducto' element={<ItemDetailContainer/>}/>
           <Route path='/cart' element={<CartContainer/>}/>
+          <Route path='/firebase' element={<FirebaseCart/>} />
         </Routes>
         <IconosFlotantes/>
         <Footer/>
