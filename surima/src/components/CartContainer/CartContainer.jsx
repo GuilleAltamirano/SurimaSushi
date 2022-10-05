@@ -6,7 +6,7 @@ import "../../styles/components/CartContainer.css";
 
 
 export const CartContainer = () => {
-    const {productCartList, deleteProduct, clearProductCartList} = useContext(CartContext);
+    const {productCartList, deleteProduct, clearProductCartList, getTotalPrecio} = useContext(CartContext);
 
     return (
         <>
@@ -23,6 +23,7 @@ export const CartContainer = () => {
                                     <p>{item.name}</p>
                                     <p>Precio: $ {item.precio}</p>
                                     <p>{item.quantity}</p>
+                                    <p>Precio total: $ {}</p>
                                     <button onClick={()=>deleteProduct(item.id)}>Eliminar producto</button>
                                 </div>
                             ))

@@ -1,48 +1,59 @@
 import "../../styles/components/ItemList.css";
 import { useEffect, useState } from "react";
 import { Item } from "../Item/Item";
-import { useParams } from "react-router-dom";
-import { collection, getDocs } from "firebase/firestore";
-import { async } from "@firebase/util";
+import { collection, getDocs, query, where } from "firebase/firestore";
 import { db } from "../../utils/firebase";
+import { useParams } from "react-router-dom";
 
 
 export const ItemList = () => {
+    const [productos, setProductos] = useState([]);
+    const {categoria} = useParams();
+    const [loading, setLoading] = useState(true)
+
+
     useEffect(()=>{
         const getData = async ()=> {
             try {
-                const queryRef = collection(db, "items");
+                let queryRef = !categoria ? collection(db, "items") : query(collection(db, "items"), where("categoria", "==", categoria));
+                
                 const response = await getDocs(queryRef);
-                const data = response.docs.map(doc=>{
+                const datos = response.docs.map(doc=>{
                     const newDoc = {
                         ...doc.data(),
                         id:doc.id
+                        
                     }
                     return newDoc;
-                })
+                    
+                });
+                setProductos(datos);
             } catch (error) {
                 console.log(error);
             }
+            setLoading(false);
         };
         getData();
-    });
-
+    }, [categoria]);
+    
     return (
-        <>
+        <div>
             <h3>Productos Ofrecidos</h3>
+            {
+                loading === true ?
+                    <p>cargando...</p>
+                
+                :
 
-        {
-            loading ? <h2>Cargando</h2>
-
-            :
-
-            <div className="containerItemList">
-                {data.map(data => (
-                    <Item key={data.name} data={data}/>
-                ))}
-            </div>
-        }
-        </>
+                    <div>
+                        {
+                            productos.map(producto => (
+                                <Item items={producto}/>
+                            ))
+                        }
+                    </div>
+            }
+        </div>
     )
 }
 

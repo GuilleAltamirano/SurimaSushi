@@ -1,31 +1,34 @@
-import { useState, useEffect } from "react";
-import { getFetch } from "../../helper/productos";
+import { useState, useEffect, useContext } from "react";
 import { useParams } from "react-router-dom";
 import '../../styles/components/ItemDetail.css'
 import { ItemCount } from "../ItemCount/ItemCount";
-import { useContext } from "react";
 import { CartContext } from "../../context/CartContext";
+import { db } from "../../utils/firebase";
+import { doc, getDoc } from "firebase/firestore";
 
 export const ItemDetail = () => {
     const [data, setData] = useState({});
     const [loading, setLoading] = useState(true);
-    const {tipoProducto} = useParams();
+    const {productId} = useParams();
     
     const {addProduct} = useContext(CartContext);
     
     let onAdd = (contador) => {
         const newProduct = {...data, quantity:contador};
-        addProduct(newProduct);
+        addProduct(newProduct, contador);
     }
 
     useEffect (() => {
-        getFetch
-        .then(response => {
-            setData(response.find(data => data.id === parseInt(tipoProducto)))
+        let queryRef = doc(db, "items", productId);
+        getDoc(queryRef).then(response => {
+            const newDoc = {
+                ...response.data(),
+                id:response.id
+            }
+            setData(newDoc)
             setLoading(false)
-            
         })
-    }, [tipoProducto])
+    }, [productId])
     
     return ( 
         <div>
@@ -37,7 +40,7 @@ export const ItemDetail = () => {
 
             <div className="containerItemDetail">
                 <img src={data.img} alt="" className="imgItemDetail"/>
-                <p>{data.name}</p>
+                <p>{data.title}</p>
                 <p>{data.description}</p>
                 <p>${data.precio}</p>
                 <ItemCount onAdd={onAdd}/>
