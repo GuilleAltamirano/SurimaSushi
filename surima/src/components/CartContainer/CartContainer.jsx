@@ -22,8 +22,8 @@ export const CartContainer = () => {
                                     <img src={item.img} alt="" />
                                     <p>{item.name}</p>
                                     <p>Precio: $ {item.precio}</p>
-                                    <p>{item.quantity}</p>
-                                    <p>Precio total: $ {}</p>
+                                    <p>Cantidad: {item.quantity}</p>
+                                    <p>Precio total: $ {item.totalPrice}</p>
                                     <button onClick={()=>deleteProduct(item.id)}>Eliminar producto</button>
                                 </div>
                             ))

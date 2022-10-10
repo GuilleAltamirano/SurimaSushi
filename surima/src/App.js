@@ -5,7 +5,7 @@ import { SectionConocenos } from "./components/SectionConocenos/SectionConocenos
 import { ItemListContainer } from "./components/ItemListContainer/ItemListContainer";
 import { ItemDetailContainer } from "./components/ItemDetailContainer/ItemDetailContainer";
 import { Footer } from "./components/Footer/Footer";
-import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { CartContainer } from './components/CartContainer/CartContainer';
 import { CartProvider } from "./context/CartContext";
 import { SectionOfrecemos } from './components/SectionOfrecemos/SectionOfrecemos';

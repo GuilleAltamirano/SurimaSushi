@@ -11,18 +11,19 @@ export const CartProvider = ({children}) => {
         return elementExists;
     }
     
-    const addProduct = (product) => {
+    const addProduct = (product, qty)=>{
+        const newList = [...productCartList];
         if(isInCart(product.id)){
-            const newList = [...productCartList];
             const productIndex = productCartList.findIndex(element=>element.id===product.id);
-            newList[productIndex].quantity = newList[productIndex].quantity + product.quantity; 
-            newList[productIndex].precio = newList[productIndex].precio * newList[productIndex].quantity;
-            
+            newList[productIndex].quantity = newList[productIndex].quantity + qty;
+            newList[productIndex].totalPrice = newList[productIndex].quantity * newList[productIndex].precio;
+            setProductCartList(newList)
+        } else{
+            const newProduct={...product, quantity:qty, totalPrice: qty*product.precio}
+            const newList = [...productCartList];
+            newList.push(newProduct);
             setProductCartList(newList);
-        }else{
-            const newList = [...productCartList, product];
-            newList.precio = product.precio * product.quantity;
-            setProductCartList(newList);
+
         }
     }
 
@@ -36,8 +37,8 @@ export const CartProvider = ({children}) => {
         setProductCartList([]);
     }
 
-    const getTotalProducts = () => {
-        const totalProducts = productCartList.reduce((acc,item)=>acc + item.quantity);
+    const getTotalProducts = ()=>{
+        const totalProducts = productCartList.reduce((acc,item)=>acc + item.quantity,0);
         return totalProducts;
     }
     

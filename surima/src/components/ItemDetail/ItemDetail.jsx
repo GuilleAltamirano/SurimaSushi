@@ -5,6 +5,7 @@ import { ItemCount } from "../ItemCount/ItemCount";
 import { CartContext } from "../../context/CartContext";
 import { db } from "../../utils/firebase";
 import { doc, getDoc } from "firebase/firestore";
+import { Link } from "react-router-dom";
 
 export const ItemDetail = () => {
     const [data, setData] = useState({});
@@ -12,10 +13,12 @@ export const ItemDetail = () => {
     const {productId} = useParams();
     
     const {addProduct} = useContext(CartContext);
+    const [quantity, setQuantity] = useState(0)
     
     let onAdd = (contador) => {
         const newProduct = {...data, quantity:contador};
         addProduct(newProduct, contador);
+        setQuantity(contador);
     }
 
     useEffect (() => {
@@ -44,6 +47,12 @@ export const ItemDetail = () => {
                 <p>{data.description}</p>
                 <p>${data.precio}</p>
                 <ItemCount onAdd={onAdd}/>
+                {
+                    quantity >= 1 && 
+                    <Link to="/cart"> 
+                        <button>Ir al carrito</button> 
+                    </Link>
+                }
             </div>
         }
         </div>

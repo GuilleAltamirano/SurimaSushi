@@ -14,7 +14,7 @@ export const Footer = () => {
                 </div>
             
             </footer>
-            <p>© 2022 | Todos los derechos reservado a Shurima Sushi & Wok</p>
+            <p>© 2022 | Todos los derechos reservado a Shurima Sushi & Wok.</p>
         </div>
     )
 }

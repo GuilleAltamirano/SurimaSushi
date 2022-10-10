@@ -6,14 +6,27 @@ import carrito from "../IconosFlotantes/img/carrito.png";
 import whatsapp from "../IconosFlotantes/img/whatsapp.png";
 
 function IconosFlotantes() {
-    const {getTotalProducts} = useContext(CartContext);
+    const {getTotalProducts, productCartList} = useContext(CartContext);
     
     return (
         <>
-            <Link to="/cart">
-                <img src={carrito} alt="Logo de carrito de compras" className='carrito'/>
-                <span>{getTotalProducts}</span>
-            </Link>
+            {
+                productCartList.length>0 ? 
+
+                <div>
+                        <Link to="/cart" className='containerCarrito'>
+                        <span className='totalCarrito'>{getTotalProducts()}</span>
+                            {console.log(getTotalProducts)}
+                        <img src={carrito} alt="Logo de carrito de compras" className='carrito'/>
+                    </Link>
+                </div>
+
+                :
+
+                <Link to="/cart" className='containerCarrito'>
+                    <img src={carrito} alt="Logo de carrito de compras" className='carrito'/>
+                </Link>
+            }
             <a href="#" ><img src={whatsapp} alt="Logo de whatsapp" className='whatsapp'/></a>
         </>
     )
