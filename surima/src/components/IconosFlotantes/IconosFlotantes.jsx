@@ -16,7 +16,6 @@ function IconosFlotantes() {
                 <div>
                         <Link to="/cart" className='containerCarrito'>
                         <span className='totalCarrito'>{getTotalProducts()}</span>
-                            {console.log(getTotalProducts)}
                         <img src={carrito} alt="Logo de carrito de compras" className='carrito'/>
                     </Link>
                 </div>

@@ -1,5 +1,18 @@
-nav {
+.navbarInactive {
     background-color: transparent;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    justify-items: center;
+    justify-self: center;
+    align-items: center;
+    padding-top: 1%;
+}
+
+.navbarActived{
+    background-color: #E82337;
     position: fixed;
     top: 0;
     width: 100%;

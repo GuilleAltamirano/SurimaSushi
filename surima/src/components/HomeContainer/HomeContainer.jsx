@@ -5,7 +5,6 @@ import { SectionOfrecemos } from "../SectionOfrecemos/SectionOfrecemos"
 export const HomeContainer = () => {
     return(
         <div>
-            <CarouselHome/>
             <SectionConocenos/>
             <SectionOfrecemos/>
         </div>

@@ -24,7 +24,9 @@ export const Form = () => {
             <input type="text" placeholder="nombre"/>
             <input type="text" placeholder="telefono"/>
             <input type="email" placeholder="email"/>
-            <button type="submit">enviar orden</button>
+            <button type="submit">
+                enviar orden
+            </button>
         </form>
     )
 }
