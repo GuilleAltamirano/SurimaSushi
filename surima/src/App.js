@@ -24,8 +24,10 @@ function App() {
           <Route path='/productos' element={<SectionOfrecemos/>}/>
           <Route path='/pedir' element={<ItemListContainer/>}/>
           <Route path='/contacto' element={<Footer/>}/>
+          <Route path='/categoria/:categoria' element={<ItemListContainer/>} />
           <Route path='/productos/:productId' element={<ItemDetailContainer/>}/>
           <Route path='/cart' element={<CartContainer/>}/>
+          <Route path='*' element={<HomeContainer/>}/>
         </Routes>
         <IconosFlotantes/>
         <Footer/>

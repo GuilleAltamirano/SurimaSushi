@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom'
 import combinadoImg from '../../images/Secciones/combos.png'
 
 export const Combinado = () => {
@@ -9,7 +10,9 @@ export const Combinado = () => {
                 <li>- Combo Todo Salmon.</li>
             </ul>
             <div>
-                <img src={combinadoImg} alt="" className='imgOfrecemos'/>
+                <Link to={"/categoria/combinados"}>
+                    <img src={combinadoImg} alt="" className='imgOfrecemos'/>
+                </Link>
             </div>
         </div>
     )
