@@ -2,7 +2,7 @@ import combinadoImg from '../../images/Secciones/combos.png'
 
 export const Combinado = () => {
     return(
-        <div className='containerOfrecemos'>
+        <div className='containerOfrecemos bg-black'>
             <ul className='containerUlOfrecemos'>
                 <li>- Combo Variado,</li>
                 <li>- Combo Salmon y Langostino,</li>

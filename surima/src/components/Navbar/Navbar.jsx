@@ -11,9 +11,6 @@ export function Navbar() {
     const detectScroll = () => {
         return window.addEventListener("scroll", conditionScroll);
     }
-    const removeScroll = () => {
-        return window.removeEventListener("scroll");
-    }
 
     const conditionScroll = () => {
         if (window.scrollY > 10){

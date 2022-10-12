@@ -3,7 +3,7 @@ import '../../styles/components/Entradas.css'
 
 export const Entradas = () => {
     return (
-        <div className='containerOfrecemos'>
+        <div className='containerOfrecemos bg-black'>
             <div>
                 <img src={entradasImg} alt="" className='imgOfrecemos'/>
             </div>

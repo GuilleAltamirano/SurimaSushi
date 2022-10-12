@@ -2,7 +2,7 @@ import gohanImg from '../../images/Secciones/gohan.png'
 
 export const Gohan = () => {
     return (
-        <div className='containerOfrecemos'>
+        <div className='containerOfrecemos bg-black'>
             <div>
                 <img src={gohanImg} alt="" className='imgOfrecemos'/>
             </div>

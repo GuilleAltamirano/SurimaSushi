@@ -4,7 +4,7 @@ import { Gohan } from "../Gohan/Gohan"
 
 export const SectionOfrecemos = () => {
     return (
-        <section>
+        <section className="bg-black">
             <h2>¿Que Ofrecemos?</h2>
             <Entradas/>
             <Combinado/>
