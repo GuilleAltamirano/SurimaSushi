@@ -21,7 +21,7 @@ export const CartContainer = () => {
                                 <div>
                                     <div className="containerProductCart bg-black" key={item}>
                                         <img src={item.img} alt="" />
-                                        <p>{item.name}</p>
+                                        <p>{item.title}</p>
                                         <p>Precio: $ {item.precio}</p>
                                         <p>Cantidad: {item.quantity}</p>
                                         <p>Precio total: $ {item.totalPrice}</p>
