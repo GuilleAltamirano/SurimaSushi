@@ -6,7 +6,7 @@ import "../../styles/components/CartContainer.css";
 
 
 export const CartContainer = () => {
-    const {productCartList, deleteProduct, clearProductCartList, productBuy} = useContext(CartContext);
+    const {productCartList, deleteProduct, clearProductCartList} = useContext(CartContext);
 
     return (
         <div className="bg-black">
@@ -37,8 +37,6 @@ export const CartContainer = () => {
                     <p>No hay productos agregados</p>
                 }
             </div>
-            
-            {console.log(productBuy())}
             <Form/>
             <button onClick={clearProductCartList}>Limpiar Carrito</button>
         </div>

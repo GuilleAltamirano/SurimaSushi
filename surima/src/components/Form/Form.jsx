@@ -6,7 +6,7 @@ import { CartContext } from "../../context/CartContext";
 
 export const Form = () => {
     const [idOrder, setIdOrder] = useState("");
-    const {productCartList, productBuy} = useContext(CartContext);
+    const {productCartList} = useContext(CartContext);
     
     const sendOrder = (e) => {
         e.preventDefault();
@@ -17,6 +17,9 @@ export const Form = () => {
                 telefono: e.target[1].value,
                 email: e.target[2].value,
             },
+            producs: {
+                productCartList
+            }
         }
         const queryRef = collection(db, "orders");
         addDoc(queryRef, order).then(respuesta=>setIdOrder(respuesta.id));
