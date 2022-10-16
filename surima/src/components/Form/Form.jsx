@@ -1,12 +1,13 @@
 import { db } from "../../utils/firebase";
 import { collection, addDoc } from "firebase/firestore";
-import { useState } from "react";
-import { useContext } from "react";
+import { useContext, useState  } from "react";
 import { CartContext } from "../../context/CartContext";
+import ReCAPTCHA from "react-google-recaptcha";
 
 export const Form = () => {
     const [idOrder, setIdOrder] = useState("");
     const {productCartList} = useContext(CartContext);
+    const [verificacion, setVerificacion] = useState(false)
     
     const sendOrder = (e) => {
         e.preventDefault();
@@ -25,12 +26,22 @@ export const Form = () => {
         addDoc(queryRef, order).then(respuesta=>setIdOrder(respuesta.id));
     }
 
+    function onChange() {
+        setVerificacion(true);
+    }
+
     return(
         <form onSubmit={sendOrder} className="bg-black">
             <input type="text" placeholder="nombre"/>
             <input type="text" placeholder="telefono"/>
             <input type="email" placeholder="email"/>
-            <button type="submit">
+            <div className="reCaptcha">
+            <ReCAPTCHA
+                sitekey="6LddXX8iAAAAAP_mqXG4SRMCxbnyWv8EZLv5XggZ"
+                onChange={onChange}
+            />
+            </div>
+            <button type="submit" disabled={!verificacion}>
                 enviar orden
             </button>
         </form>

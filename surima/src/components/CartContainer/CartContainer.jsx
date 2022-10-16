@@ -27,6 +27,8 @@ export const CartContainer = () => {
                                         <p>Precio total: $ {item.totalPrice}</p>
                                         <button onClick={()=>deleteProduct(item.id)}>Eliminar producto</button>
                                     </div>
+                                    <Form/>
+                                    <button onClick={clearProductCartList}>Limpiar Carrito</button>
                                 </div>
                             ))
                         }
@@ -37,8 +39,6 @@ export const CartContainer = () => {
                     <p>No hay productos agregados</p>
                 }
             </div>
-            <Form/>
-            <button onClick={clearProductCartList}>Limpiar Carrito</button>
         </div>
     )
 }
