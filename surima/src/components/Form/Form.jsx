@@ -3,6 +3,7 @@ import { collection, addDoc } from "firebase/firestore";
 import { useContext, useState  } from "react";
 import { CartContext } from "../../context/CartContext";
 import ReCAPTCHA from "react-google-recaptcha";
+import '../../styles/components/Form.css'
 
 export const Form = () => {
     const [idOrder, setIdOrder] = useState("");
@@ -15,8 +16,9 @@ export const Form = () => {
         const order = {
             buyer: {
                 name: e.target[0].value,
-                telefono: e.target[1].value,
-                email: e.target[2].value,
+                surname: e.target[1].value,
+                telefono: e.target[2].value,
+                email: e.target[4].value,
             },
             producs: {
                 productCartList
@@ -31,17 +33,19 @@ export const Form = () => {
     }
 
     return(
-        <form onSubmit={sendOrder} className="bg-black">
-            <input type="text" placeholder="nombre"/>
-            <input type="text" placeholder="telefono"/>
-            <input type="email" placeholder="email"/>
+        <form onSubmit={sendOrder} className="containerForm">
+            <input type="text" placeholder="Nombre" className="inputForm"/>
+            <input type="text" placeholder="Apellido" className="inputForm"/>
+            <input type="text" placeholder="Telefono" className="inputForm"/>
+            <input type="email" placeholder="Email" className="inputForm"/>
             <div className="reCaptcha">
             <ReCAPTCHA
                 sitekey="6LddXX8iAAAAAP_mqXG4SRMCxbnyWv8EZLv5XggZ"
                 onChange={onChange}
+                className='reCaptcha'
             />
             </div>
-            <button type="submit" disabled={!verificacion}>
+            <button type="submit" disabled={!verificacion} className="buttonComprar">
                 enviar orden
             </button>
         </form>

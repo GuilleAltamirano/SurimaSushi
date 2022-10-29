@@ -1,3 +1,13 @@
+Descripcion: Este proyecto es para shurima sushi, quienes se dedican a la elaboracion y comercializacion de comida asiatica,
+lo principal es que puedan tener informacion de contactos y ubicacion para atraer clientes.
+El agregar el e-commerse dentro de la misma web, optimiza la gestion de compra para el cliente, ya que tiene informacion de los productos.
+
+Utilidad: Este proyecto esta basado en ReactJS como front-end, utilizando etiquetas html y css.
+Como base de datos se utilizo firebase.
+Ademas cuenta con instalacion de librerias como boostrap react y swiperJS.
+
+
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).

@@ -1,7 +1,7 @@
 import { useContext } from 'react';
 import { Link } from 'react-router-dom';
 import { CartContext } from '../../context/CartContext';
-import '../../styles/components/iconosFlotantes.scss'
+import '../../styles/components/iconosFlotantes.css'
 import carrito from "../IconosFlotantes/img/carrito.png";
 import whatsapp from "../IconosFlotantes/img/whatsapp.png";
 
@@ -14,7 +14,7 @@ function IconosFlotantes() {
                 productCartList.length>0 ? 
 
                 <div>
-                        <Link to="/cart" className='containerCarrito'>
+                    <Link to="/cart" className='containerCarrito'>
                         <span className='totalCarrito'>{getTotalProducts()}</span>
                         <img src={carrito} alt="Logo de carrito de compras" className='carrito'/>
                     </Link>

@@ -1,15 +1,25 @@
-import "../../styles/components/ItemList.css";
 import { useEffect, useState } from "react";
 import { Item } from "../Item/Item";
 import { collection, getDocs, query, where } from "firebase/firestore";
 import { db } from "../../utils/firebase";
 import { useParams } from "react-router-dom";
+// Import Swiper React components
+import { Swiper, SwiperSlide } from "swiper/react";
+
+// Import Swiper styles
+import "swiper/css";
+import "swiper/css/free-mode";
+import "swiper/css/pagination";
+
+// import required modules
+import { FreeMode, Pagination } from "swiper";
+
 
 
 export const ItemList = () => {
     const [productos, setProductos] = useState([]);
     const {categoria} = useParams();
-    const [loading, setLoading] = useState(true)
+    const [loading, setLoading] = useState(true);
 
 
     useEffect(()=>{
@@ -38,7 +48,6 @@ export const ItemList = () => {
     
     return (
         <div>
-            <h3>Productos Ofrecidos</h3>
             {
                 loading === true ?
                     <p>cargando...</p>
@@ -46,11 +55,21 @@ export const ItemList = () => {
                 :
 
                     <div>
-                        {
-                            productos.map(producto => (
-                                <Item items={producto}/>
-                            ))
-                        }
+                        <Swiper
+                            slidesPerView={3}
+                            spaceBetween={30}
+                            freeMode={true}
+                            pagination={{
+                                clickable: true,
+                            }}
+                            modules={[FreeMode, Pagination]}
+                            className="mySwiper">
+                            {
+                                productos.map(producto => (
+                                    <SwiperSlide><Item items={producto}/></SwiperSlide>
+                                ))
+                            }
+                        </Swiper>
                     </div>
             }
         </div>

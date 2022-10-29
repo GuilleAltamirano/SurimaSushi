@@ -1,3 +1,11 @@
+.logoLink {
+    display: flex;
+    justify-content: center;
+
+}
+
+/* Clases de Navbar inactivo */
+
 .navbarInactive {
     background-color: transparent;
     position: fixed;
@@ -9,7 +17,35 @@
     justify-self: center;
     align-items: center;
     padding-top: 1%;
+    z-index: 1000;
 }
+
+.claseInactive {
+    padding: 20px;
+    text-decoration: none;
+    color: #fff;
+    font-size: 150%;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    
+}
+
+.logoInactive {
+    display: flex;
+    max-width: 200px;
+    max-height: 200px;
+    width: 100%;
+    height: 100%;
+}
+
+.claseActiveTwo {
+    padding: 20px;
+    text-decoration: none;
+    color: #E82337;
+    font-size: 150%;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* Clases de Navbar activo */
 
 .navbarActived{
     background-color: #E82337;
@@ -21,16 +57,13 @@
     justify-items: center;
     justify-self: center;
     align-items: center;
-    padding-top: 1%;
+    z-index: 1000;
+    border-bottom-right-radius: 30px;
+    border-bottom-left-radius: 30px;
+    max-width: 50%;
+    margin-left: 25%;
 }
-.claseInactive {
-    padding: 20px;
-    text-decoration: none;
-    color: #fff;
-    font-size: 150%;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    
-}
+
 .claseActive{
     padding: 20px;
     text-decoration: none;
@@ -38,19 +71,11 @@
     font-size: 150%;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
-.logoLink {
-    display: flex;
-    justify-content: center;
-}
-.logoInactive {
-    display: flex;
-    max-width: 200px;
-    max-height: 200px;
-    width: 100%;
-    height: 100%;
-}
+
+
 .logoActived {
     display: flex;
-    width: 10%;
-    height: 10%;
+    width: 100px;
+    height: 100px;
+    left: 0;
 }

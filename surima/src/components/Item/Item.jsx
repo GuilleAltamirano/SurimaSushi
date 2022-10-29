@@ -4,14 +4,15 @@ import '../../styles/components/Item.css';
 export const Item = ({items}) => {
     return (
         <div>
-            <Link key={items.id} to={`/Productos/${items.id}`}>
+            
                 <div key={items.name} className="containerItem">
                     <img src={items.img} alt="Imagen de producto" className='imgItem'/>
-                    <h4>{items.title}</h4>
-                    <p>{items.description}</p>
+                    <h4 className='titleItem'>{items.title}</h4>
                     <p>precio: ${items.precio}</p>
-                </div>
-            </Link>          
+                    <Link key={items.id} to={`/Productos/${items.id}`} className="linkBotonItem">
+                        <button className='botonItem'>Saber mas</button>
+                    </Link>
+                </div>         
         </div>
     )
 }

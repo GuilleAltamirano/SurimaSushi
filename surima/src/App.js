@@ -1,15 +1,16 @@
-import './styles/app.scss';
+import './styles/app.css';
 import {Navbar} from "./components/Navbar/Navbar";
 import IconosFlotantes from "./components/IconosFlotantes/IconosFlotantes";
 import { SectionConocenos } from "./components/SectionConocenos/SectionConocenos";
 import { ItemListContainer } from "./components/ItemListContainer/ItemListContainer";
-import { ItemDetailContainer } from "./components/ItemDetailContainer/ItemDetailContainer";
+import { ItemDetail } from "./components/ItemDetail/ItemDetail";
 import { Footer } from "./components/Footer/Footer";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { CartContainer } from './components/CartContainer/CartContainer';
 import { CartProvider } from "./context/CartContext";
 import { SectionOfrecemos } from './components/SectionOfrecemos/SectionOfrecemos';
 import { HomeContainer } from './components/HomeContainer/HomeContainer';
+
 
 
 
@@ -25,7 +26,7 @@ function App() {
           <Route path='/pedir' element={<ItemListContainer/>}/>
           <Route path='/contacto' element={<Footer/>}/>
           <Route path='/categoria/:categoria' element={<ItemListContainer/>} />
-          <Route path='/productos/:productId' element={<ItemDetailContainer/>}/>
+          <Route path='/productos/:productId' element={<ItemDetail/>}/>
           <Route path='/cart' element={<CartContainer/>}/>
           <Route path='*' element={<HomeContainer/>}/>
         </Routes>

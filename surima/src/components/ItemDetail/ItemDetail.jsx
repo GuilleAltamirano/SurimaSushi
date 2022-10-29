@@ -35,24 +35,29 @@ export const ItemDetail = () => {
     
     return ( 
         <div>
-            <h1>ItemDetailContainer</h1>
         {
             loading ? <h2>Cargando...</h2>
 
             :
 
             <div className="containerItemDetail">
-                <img src={data.img} alt="" className="imgItemDetail"/>
-                <p>{data.title}</p>
-                <p>{data.description}</p>
-                <p>${data.precio}</p>
-                <ItemCount onAdd={onAdd}/>
-                {
-                    quantity >= 1 && 
-                    <Link to="/cart"> 
-                        <button>Ir al carrito</button> 
-                    </Link>
-                }
+                <div className="ItemDetail">
+                    <div>
+                        <img src={data.img} alt="" className="imgItemDetail"/>
+                    </div>
+                    <div>
+                        <h3 className="titleItemDetail">{data.title}</h3>
+                        <p>{data.description}</p>
+                        <p>Precio ${data.precio}</p>
+                        <ItemCount onAdd={onAdd}/>
+                        {
+                            quantity >= 1 && 
+                            <Link to="/cart"> 
+                                <button className="buttonCarritoDetail">Ir al carrito</button> 
+                            </Link>
+                        }
+                    </div>
+                </div>
             </div>
         }
         </div>

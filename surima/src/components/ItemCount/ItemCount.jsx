@@ -18,10 +18,12 @@ export const ItemCount = ({onAdd}) => {
     
     return (
         <>
-            <div className="containerContador">
-                    <button onClick={sumar}>+</button>
-                    <p>{contador}</p>
-                    <button onClick={restar}>-</button>
+            <div className='pb-4'>
+                <div className="containerContador opacity-50">
+                        <button onClick={sumar} className="buttonItemCount">+</button>
+                        <p className='contadorItemCount'>{contador}</p>
+                        <button onClick={restar} className="buttonItemCount">-</button>
+                </div>
             </div>
             <button className="agregarCarritoBT" onClick={()=>onAdd(contador)}>Agregar al carrito</button>
         </>

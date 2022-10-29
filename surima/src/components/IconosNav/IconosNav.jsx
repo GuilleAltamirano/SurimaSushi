@@ -1,4 +1,4 @@
-import '../../styles/components/iconosNav.scss';
+import '../../styles/components/iconosNav.css';
 import instagram from "../IconosNav/img/instagram.png";
 import facebook from "../IconosNav/img/facebook.png";
 
